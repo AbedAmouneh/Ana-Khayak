@@ -1,0 +1,2484 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ana Khayyak | Building Communities Through Hope</title>
+  <meta name="description" content="Ana Khayyak is a Lebanese NGO founded in 2017, empowering youth and fostering positive change through volunteer work and community engagement." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Kufi+Arabic:wght@400;500;700;900&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===========================
+       CSS VARIABLES & RESET
+    =========================== */
+    :root {
+      --blue-primary: #1A6FA8;
+      --blue-dark: #0F4F7A;
+      --blue-light: #2E8BC0;
+      --blue-soft: #EBF4FB;
+      --gold: #E8A020;
+      --gold-light: #FDF3E0;
+      --white: #ffffff;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-400: #94A3B8;
+      --gray-600: #475569;
+      --gray-800: #1E293B;
+      --text-dark: #0F172A;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --radius-xl: 32px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.05);
+      --shadow-md: 0 4px 16px rgba(0,0,0,0.10);
+      --shadow-lg: 0 12px 40px rgba(0,0,0,0.13);
+      --shadow-blue: 0 8px 30px rgba(26,111,168,0.25);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    [lang="ar"] { direction: rtl; }
+    [lang="ar"] body { font-family: 'Noto Kufi Arabic', sans-serif; }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; font-family: inherit; border: none; outline: none; }
+    ul { list-style: none; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section { padding: 96px 0; }
+    .section-sm { padding: 64px 0; }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--blue-soft);
+      color: var(--blue-primary);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 17px;
+      color: var(--gray-600);
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    .section-header { margin-bottom: 60px; }
+    .section-header.center { text-align: center; }
+    .section-header.center .section-subtitle { margin: 0 auto; }
+
+    .highlight { color: var(--blue-primary); }
+    .highlight-gold { color: var(--gold); }
+
+    /* ===========================
+       BUTTONS
+    =========================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 26px;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-weight: 600;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--blue-primary);
+      color: var(--white);
+    }
+    .btn-primary:hover { background: var(--blue-dark); transform: translateY(-2px); box-shadow: var(--shadow-blue); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.6);
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.15); border-color: white; }
+
+    .btn-outline-blue {
+      background: transparent;
+      color: var(--blue-primary);
+      border: 2px solid var(--blue-primary);
+    }
+    .btn-outline-blue:hover { background: var(--blue-primary); color: white; }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--white);
+    }
+    .btn-gold:hover { background: #c8871a; transform: translateY(-2px); }
+
+    .btn-lg { padding: 16px 34px; font-size: 16px; border-radius: var(--radius-md); }
+
+    /* ===========================
+       NAVBAR
+    =========================== */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 18px 0;
+      transition: var(--transition);
+    }
+
+    #navbar.scrolled {
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+      padding: 12px 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--white);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo .logo-icon {
+      width: 36px; height: 36px;
+      background: var(--white);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-logo .logo-icon svg { width: 22px; height: 22px; }
+
+    #navbar.scrolled .nav-logo { color: var(--blue-primary); }
+    #navbar.scrolled .nav-logo .logo-icon { background: var(--blue-primary); }
+    #navbar.scrolled .nav-logo .logo-icon svg path { fill: white; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0; right: 0;
+      height: 2px;
+      background: var(--white);
+      transform: scaleX(0);
+      transition: var(--transition);
+      border-radius: 2px;
+    }
+
+    .nav-links a:hover { color: white; }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    #navbar.scrolled .nav-links a { color: var(--gray-600); }
+    #navbar.scrolled .nav-links a::after { background: var(--blue-primary); }
+    #navbar.scrolled .nav-links a:hover { color: var(--blue-primary); }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 100px;
+      background: rgba(255,255,255,0.15);
+      color: white;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      border: 1.5px solid rgba(255,255,255,0.3);
+    }
+
+    .lang-toggle:hover { background: rgba(255,255,255,0.25); }
+    #navbar.scrolled .lang-toggle { background: var(--gray-100); color: var(--gray-800); border-color: var(--gray-200); }
+    #navbar.scrolled .lang-toggle:hover { background: var(--gray-200); }
+
+    .nav-donate-btn {
+      padding: 9px 20px;
+      background: var(--gold);
+      color: white;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+    .nav-donate-btn:hover { background: #c8871a; transform: translateY(-1px); }
+    #navbar.scrolled .nav-donate-btn { background: var(--gold); }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px; height: 2px;
+      background: white;
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+    #navbar.scrolled .hamburger span { background: var(--gray-800); }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      background: white;
+      border-top: 1px solid var(--gray-100);
+      padding: 16px 0;
+    }
+
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      padding: 13px 24px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--gray-800);
+      border-bottom: 1px solid var(--gray-100);
+      transition: var(--transition);
+    }
+    .mobile-menu a:hover { background: var(--gray-50); color: var(--blue-primary); }
+    .mobile-menu .mobile-donate {
+      margin: 16px 24px 0;
+      background: var(--gold);
+      color: white;
+      border-radius: var(--radius-sm);
+      text-align: center;
+    }
+
+    /* ===========================
+       HERO
+    =========================== */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: linear-gradient(135deg, #0B3A55 0%, #1A6FA8 50%, #2E8BC0 100%);
+      overflow: hidden;
+    }
+
+    .hero-bg-shapes {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .hero-bg-shapes::before {
+      content: '';
+      position: absolute;
+      top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-bg-shapes::after {
+      content: '';
+      position: absolute;
+      bottom: -150px; left: -150px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(232,160,32,0.12) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      padding: 120px 0 80px;
+    }
+
+    .hero-content {}
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.9);
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 28px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-badge .dot {
+      width: 7px; height: 7px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.2); }
+    }
+
+    .hero-title {
+      font-size: clamp(36px, 5vw, 62px);
+      font-weight: 900;
+      color: white;
+      line-height: 1.08;
+      margin-bottom: 24px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-title .accent {
+      color: var(--gold);
+      position: relative;
+    }
+
+    .hero-description {
+      font-size: 18px;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.7;
+      margin-bottom: 40px;
+      max-width: 480px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.15);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-top: 60px;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .hero-stat {
+      padding: 24px 20px;
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(8px);
+      text-align: center;
+    }
+
+    .hero-stat-number {
+      font-size: 32px;
+      font-weight: 900;
+      color: white;
+      line-height: 1;
+    }
+
+    .hero-stat-label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.65);
+      font-weight: 500;
+      margin-top: 6px;
+      letter-spacing: 0.3px;
+    }
+
+    .hero-image-area {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image-card {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.4);
+      border: 4px solid rgba(255,255,255,0.15);
+    }
+
+    .hero-image-card img {
+      width: 460px;
+      max-width: 460px;
+      height: 520px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .hero-image-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(15,79,122,0.7) 0%, transparent 50%);
+    }
+
+    .hero-image-badge {
+      position: absolute;
+      bottom: 24px; left: 24px;
+      background: rgba(255,255,255,0.95);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-image-badge-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    .hero-image-badge-sub {
+      font-size: 12px;
+      color: var(--gray-600);
+      margin-top: 2px;
+    }
+
+    .floating-card {
+      position: absolute;
+      background: white;
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .floating-card-1 { top: 30px; right: -20px; animation-delay: 0s; }
+    .floating-card-2 { bottom: 100px; right: -30px; animation-delay: 1.5s; }
+
+    .floating-card-icon {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .fc-blue { background: var(--blue-soft); }
+    .fc-gold { background: var(--gold-light); }
+
+    .floating-card-text { font-size: 13px; font-weight: 600; color: var(--text-dark); }
+    .floating-card-sub { font-size: 11px; color: var(--gray-600); }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px; left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.5);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    .scroll-line {
+      width: 1.5px; height: 40px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+    }
+
+    /* ===========================
+       MARQUEE STRIP
+    =========================== */
+    .partners-strip {
+      background: var(--gray-50);
+      border-top: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 20px 0;
+      overflow: hidden;
+    }
+
+    .marquee {
+      display: flex;
+      gap: 64px;
+      animation: marquee 20s linear infinite;
+      width: max-content;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .marquee-item {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--gray-400);
+      white-space: nowrap;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .marquee-dot { width: 5px; height: 5px; background: var(--gray-300); border-radius: 50%; }
+
+    /* ===========================
+       ABOUT SECTION
+    =========================== */
+    #about { background: white; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-images {
+      position: relative;
+    }
+
+    .about-img-main {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-img-main img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+    }
+
+    .about-img-accent {
+      position: absolute;
+      bottom: -30px; right: -30px;
+      width: 220px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 5px solid white;
+    }
+
+    .about-img-accent img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .years-badge {
+      position: absolute;
+      top: 30px; left: -20px;
+      background: var(--blue-primary);
+      color: white;
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      text-align: center;
+      box-shadow: var(--shadow-blue);
+    }
+
+    .years-badge-number { font-size: 36px; font-weight: 900; line-height: 1; }
+    .years-badge-text { font-size: 11px; font-weight: 600; opacity: 0.8; margin-top: 4px; letter-spacing: 0.5px; }
+
+    .about-content {}
+
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 36px 0;
+    }
+
+    .about-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 16px;
+      background: var(--gray-50);
+      border-radius: var(--radius-sm);
+      border-left: 3px solid var(--blue-primary);
+    }
+
+    .about-feature-icon {
+      font-size: 22px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .about-feature-title { font-size: 14px; font-weight: 700; color: var(--text-dark); }
+    .about-feature-text { font-size: 13px; color: var(--gray-600); margin-top: 2px; }
+
+    /* ===========================
+       MISSION/VISION/VALUES
+    =========================== */
+    #mission { background: var(--gray-50); }
+
+    .mvv-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-bottom: 60px;
+    }
+
+    .mvv-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 36px 30px;
+      border: 1px solid var(--gray-200);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mvv-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--blue-primary), var(--blue-light));
+    }
+
+    .mvv-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+
+    .mvv-icon {
+      width: 56px; height: 56px;
+      background: var(--blue-soft);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 26px;
+    }
+
+    .mvv-card-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 14px;
+    }
+
+    .mvv-card-text { font-size: 15px; color: var(--gray-600); line-height: 1.75; }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .value-card {
+      background: white;
+      border-radius: var(--radius-md);
+      padding: 28px 22px;
+      text-align: center;
+      border: 1.5px solid var(--gray-200);
+      transition: var(--transition);
+    }
+
+    .value-card:hover { border-color: var(--blue-primary); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+
+    .value-emoji { font-size: 36px; margin-bottom: 14px; }
+
+    .value-name {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .value-desc { font-size: 13px; color: var(--gray-600); line-height: 1.6; }
+
+    /* ===========================
+       ACTIVITIES
+    =========================== */
+    #activities { background: white; }
+
+    .activities-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .activity-card {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: white;
+      border: 1.5px solid var(--gray-200);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .activity-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); border-color: var(--blue-light); }
+
+    .activity-img {
+      height: 240px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #1A6FA8, #2E8BC0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .activity-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .activity-card:hover .activity-img img { transform: scale(1.06); }
+
+    .activity-img-placeholder { font-size: 72px; opacity: 0.6; }
+
+    .activity-category {
+      position: absolute;
+      top: 16px; left: 16px;
+      background: rgba(255,255,255,0.9);
+      color: var(--blue-primary);
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 12px;
+      font-weight: 700;
+      backdrop-filter: blur(8px);
+    }
+
+    .activity-body { padding: 28px; flex: 1; }
+
+    .activity-icon {
+      width: 44px; height: 44px;
+      background: var(--blue-soft);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .activity-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+
+    .activity-desc { font-size: 14px; color: var(--gray-600); line-height: 1.7; }
+
+    .activity-footer {
+      padding: 16px 28px;
+      border-top: 1px solid var(--gray-100);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .activity-tag {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--blue-primary);
+      background: var(--blue-soft);
+      padding: 4px 10px;
+      border-radius: 100px;
+    }
+
+    .activity-arrow {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: var(--gray-100);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-600);
+      transition: var(--transition);
+    }
+
+    .activity-card:hover .activity-arrow { background: var(--blue-primary); color: white; }
+
+    /* ===========================
+       IMPACT NUMBERS
+    =========================== */
+    #impact {
+      background: linear-gradient(135deg, #0B3A55 0%, #1A6FA8 100%);
+      padding: 80px 0;
+    }
+
+    .impact-inner {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .impact-inner .section-label { background: rgba(255,255,255,0.15); color: white; }
+    .impact-inner .section-title { color: white; }
+    .impact-inner .section-subtitle { color: rgba(255,255,255,0.7); margin: 0 auto; }
+
+    .impact-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.1);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .impact-stat {
+      padding: 44px 24px;
+      background: rgba(255,255,255,0.07);
+      text-align: center;
+      position: relative;
+    }
+
+    .impact-stat::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%; transform: translateX(-50%);
+      width: 40px; height: 3px;
+      background: var(--gold);
+      border-radius: 0 0 3px 3px;
+    }
+
+    .impact-stat-number {
+      font-size: 52px;
+      font-weight: 900;
+      color: white;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+    .impact-stat-number .suffix { font-size: 32px; }
+
+    .impact-stat-label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      font-weight: 500;
+      margin-top: 10px;
+      letter-spacing: 0.3px;
+    }
+
+    .impact-stat-icon { font-size: 28px; margin-bottom: 14px; }
+
+    /* ===========================
+       PARTNERS
+    =========================== */
+    #partners { background: var(--gray-50); }
+
+    .partners-intro {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 80px;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .partner-card {
+      background: white;
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-md);
+      padding: 28px 20px;
+      text-align: center;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .partner-card:hover {
+      border-color: var(--blue-primary);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .partner-abbr {
+      font-size: 26px;
+      font-weight: 900;
+      color: var(--blue-primary);
+      letter-spacing: -0.5px;
+    }
+
+    .partner-name { font-size: 12px; font-weight: 600; color: var(--gray-600); letter-spacing: 0.3px; }
+    .partner-type { font-size: 11px; color: var(--gray-400); }
+
+    /* ===========================
+       VOLUNTEER & DONATE
+    =========================== */
+    #get-involved { background: white; }
+
+    .involved-tabs {
+      display: flex;
+      gap: 4px;
+      background: var(--gray-100);
+      border-radius: var(--radius-sm);
+      padding: 4px;
+      margin-bottom: 48px;
+      width: fit-content;
+    }
+
+    .involved-tab {
+      padding: 11px 28px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gray-600);
+      background: transparent;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+    }
+
+    .involved-tab.active {
+      background: white;
+      color: var(--blue-primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .form-full { grid-column: 1 / -1; }
+
+    .form-group { display: flex; flex-direction: column; gap: 7px; }
+    .form-label { font-size: 13px; font-weight: 600; color: var(--gray-800); }
+    .form-label span { color: var(--blue-primary); margin-left: 2px; }
+
+    .form-input, .form-select, .form-textarea {
+      padding: 12px 14px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 14px;
+      color: var(--text-dark);
+      background: white;
+      transition: var(--transition);
+      width: 100%;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--blue-primary);
+      box-shadow: 0 0 0 3px rgba(26,111,168,0.1);
+    }
+
+    .form-textarea { resize: vertical; min-height: 120px; }
+
+    .donate-amounts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .donate-amount {
+      padding: 14px;
+      border: 2px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      text-align: center;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--gray-600);
+      cursor: pointer;
+      transition: var(--transition);
+      background: white;
+    }
+
+    .donate-amount:hover, .donate-amount.active {
+      border-color: var(--blue-primary);
+      color: var(--blue-primary);
+      background: var(--blue-soft);
+    }
+
+    .donate-amount .currency { font-size: 12px; font-weight: 500; }
+
+    .donate-purposes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .donate-purpose {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .donate-purpose input[type="radio"] { display: none; }
+    .donate-purpose:has(input:checked) {
+      border-color: var(--blue-primary);
+      background: var(--blue-soft);
+    }
+
+    .donate-purpose-icon { font-size: 22px; }
+    .donate-purpose-title { font-size: 14px; font-weight: 600; color: var(--text-dark); }
+    .donate-purpose-desc { font-size: 12px; color: var(--gray-600); }
+
+    .bank-details {
+      background: var(--gray-50);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      border: 1.5px dashed var(--gray-300);
+      margin-top: 24px;
+    }
+
+    .bank-details-title { font-size: 15px; font-weight: 700; margin-bottom: 14px; }
+    .bank-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--gray-200);
+      font-size: 14px;
+    }
+
+    .bank-row:last-child { border-bottom: none; }
+    .bank-row-label { color: var(--gray-600); font-weight: 500; }
+    .bank-row-value { font-weight: 600; color: var(--text-dark); }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 40px;
+      background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+      border-radius: var(--radius-md);
+      border: 1.5px solid #86efac;
+    }
+
+    .form-success-icon { font-size: 56px; margin-bottom: 16px; }
+    .form-success-title { font-size: 22px; font-weight: 800; color: #15803d; margin-bottom: 8px; }
+    .form-success-text { color: #166534; font-size: 15px; }
+
+    /* ===========================
+       CONTACT
+    =========================== */
+    #contact { background: var(--gray-50); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-info { display: flex; flex-direction: column; gap: 24px; }
+
+    .contact-card {
+      background: white;
+      border-radius: var(--radius-md);
+      padding: 24px;
+      border: 1.5px solid var(--gray-200);
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      transition: var(--transition);
+    }
+
+    .contact-card:hover { border-color: var(--blue-primary); box-shadow: var(--shadow-sm); }
+
+    .contact-icon {
+      width: 48px; height: 48px; flex-shrink: 0;
+      background: var(--blue-soft);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    .contact-card-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-400); }
+    .contact-card-value { font-size: 16px; font-weight: 600; color: var(--text-dark); margin-top: 3px; }
+    .contact-card-sub { font-size: 13px; color: var(--gray-600); margin-top: 2px; }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      padding: 24px;
+      background: white;
+      border-radius: var(--radius-md);
+      border: 1.5px solid var(--gray-200);
+    }
+
+    .social-link {
+      width: 44px; height: 44px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      background: var(--gray-100);
+      transition: var(--transition);
+    }
+
+    .social-link:hover { background: var(--blue-primary); transform: translateY(-2px); }
+    .social-link:hover svg { fill: white; }
+
+    .contact-form-wrapper {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      border: 1.5px solid var(--gray-200);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* ===========================
+       CTA BANNER
+    =========================== */
+    #cta {
+      background: linear-gradient(135deg, #0B3A55, #1A6FA8);
+      padding: 80px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #cta::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 60%);
+      border-radius: 50%;
+    }
+
+    .cta-title {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 900;
+      color: white;
+      margin-bottom: 16px;
+    }
+
+    .cta-subtitle { font-size: 17px; color: rgba(255,255,255,0.72); margin-bottom: 36px; }
+
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    /* ===========================
+       FOOTER
+    =========================== */
+    #footer {
+      background: #0A2540;
+      color: rgba(255,255,255,0.7);
+      padding: 64px 0 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1.2fr;
+      gap: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-logo {
+      font-size: 22px;
+      font-weight: 900;
+      color: white;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-logo-icon {
+      width: 36px; height: 36px;
+      background: var(--blue-primary);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-about { font-size: 14px; line-height: 1.75; margin-bottom: 24px; }
+
+    .footer-col-title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover { color: white; padding-left: 4px; }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .footer-contact-item .icon { font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+
+    .footer-socials {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .footer-social {
+      width: 38px; height: 38px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      transition: var(--transition);
+    }
+
+    .footer-social:hover { background: var(--blue-primary); }
+
+    .footer-bottom {
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+    }
+
+    .footer-bottom-links { display: flex; gap: 24px; }
+    .footer-bottom-links a { color: rgba(255,255,255,0.45); transition: var(--transition); }
+    .footer-bottom-links a:hover { color: white; }
+
+    /* ===========================
+       SCROLL ANIMATIONS
+    =========================== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-delay-1 { transition-delay: 0.1s; }
+    .fade-delay-2 { transition-delay: 0.2s; }
+    .fade-delay-3 { transition-delay: 0.3s; }
+    .fade-delay-4 { transition-delay: 0.4s; }
+
+    /* ===========================
+       TOAST NOTIFICATION
+    =========================== */
+    .toast {
+      position: fixed;
+      bottom: 30px; right: 30px;
+      background: #1e293b;
+      color: white;
+      padding: 14px 20px;
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: var(--shadow-lg);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transform: translateY(80px);
+      opacity: 0;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .toast.show { transform: translateY(0); opacity: 1; }
+    .toast-icon { font-size: 20px; }
+
+    /* ===========================
+       ARABIC MODE
+    =========================== */
+    [dir="rtl"] .about-feature { border-left: none; border-right: 3px solid var(--blue-primary); }
+    [dir="rtl"] .footer-links a:hover { padding-left: 0; padding-right: 4px; }
+    [dir="rtl"] .hero-description { margin-right: 0; }
+    [dir="rtl"] .floating-card-1 { right: auto; left: -20px; }
+    [dir="rtl"] .floating-card-2 { right: auto; left: -30px; }
+    [dir="rtl"] .years-badge { left: auto; right: -20px; }
+    [dir="rtl"] .about-img-accent { right: auto; left: -30px; }
+
+    /* ===========================
+       RESPONSIVE
+    =========================== */
+    @media (max-width: 1024px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+      .hero-image-area { display: none; }
+      .hero-content { max-width: 700px; margin: 0 auto; text-align: center; }
+      .hero-description { margin: 0 auto 40px; }
+      .hero-buttons { justify-content: center; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-images { max-width: 560px; margin: 0 auto; }
+      .mvv-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: repeat(2, 1fr); }
+      .impact-stats { grid-template-columns: repeat(2, 1fr); }
+      .partners-intro { grid-template-columns: 1fr; gap: 40px; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .section { padding: 64px 0; }
+      .nav-links, .nav-actions { display: none; }
+      .hamburger { display: flex; }
+      .activities-grid { grid-template-columns: 1fr; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-full { grid-column: auto; }
+      .donate-amounts { grid-template-columns: repeat(2, 1fr); }
+      .donate-purposes { grid-template-columns: 1fr; }
+      .impact-stats { grid-template-columns: repeat(2, 1fr); }
+      .hero-stats { grid-template-columns: repeat(3, 1fr); }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+      .footer-bottom-links { flex-wrap: wrap; justify-content: center; }
+      .partners-grid { grid-template-columns: repeat(2, 1fr); }
+      .involved-tabs { width: 100%; }
+      .involved-tab { flex: 1; text-align: center; }
+      .contact-form-wrapper { padding: 24px; }
+      .values-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 480px) {
+      .hero-stats { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr; }
+      .donate-amounts { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===========================
+       NAVBAR
+  =========================== -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo">
+          <div class="logo-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C9.34 2 7.18 4.16 7.18 6.82C7.18 9.42 9.22 11.54 11.87 11.62C11.96 11.61 12.05 11.61 12.12 11.62C14.77 11.54 16.81 9.42 16.82 6.82C16.82 4.16 14.66 2 12 2Z" fill="#1A6FA8"/>
+              <path d="M17.16 14.15C14.33 12.29 9.69 12.29 6.84 14.15C5.55 15 4.85 16.15 4.85 17.38C4.85 18.61 5.55 19.75 6.83 20.59C8.25 21.53 10.12 22 12 22C13.88 22 15.75 21.53 17.17 20.59C18.45 19.74 19.15 18.6 19.15 17.36C19.14 16.13 18.45 14.99 17.16 14.15Z" fill="#1A6FA8"/>
+            </svg>
+          </div>
+          Ana Khayyak
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about" class="nav-link" data-en="About Us" data-ar="من نحن">About Us</a></li>
+          <li><a href="#mission" class="nav-link" data-en="Our Mission" data-ar="مهمتنا">Our Mission</a></li>
+          <li><a href="#activities" class="nav-link" data-en="Activities" data-ar="الأنشطة">Activities</a></li>
+          <li><a href="#partners" class="nav-link" data-en="Partners" data-ar="الشركاء">Partners</a></li>
+          <li><a href="#contact" class="nav-link" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()">
+            <span id="langLabel">عربي</span>
+          </button>
+          <a href="#get-involved" class="nav-donate-btn" data-en="Donate Now" data-ar="تبرع الآن">Donate Now</a>
+        </div>
+
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#about" onclick="closeMenu()">About Us</a>
+        <a href="#mission" onclick="closeMenu()">Our Mission</a>
+        <a href="#activities" onclick="closeMenu()">Activities</a>
+        <a href="#partners" onclick="closeMenu()">Partners</a>
+        <a href="#get-involved" onclick="closeMenu()">Volunteer</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+        <a href="#get-involved" class="mobile-donate" onclick="closeMenu()">🤝 Donate Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===========================
+       HERO
+  =========================== -->
+  <section id="hero">
+    <div class="hero-bg-shapes"></div>
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="dot"></span>
+            <span data-en="Lebanese NGO · Since 2017" data-ar="منظمة لبنانية غير حكومية · منذ 2017">Lebanese NGO · Since 2017</span>
+          </div>
+          <h1 class="hero-title">
+            <span data-en="Building" data-ar="بناء">Building</span>
+            <br><span class="accent" data-en="Communities" data-ar="المجتمعات">Communities</span>
+            <br><span data-en="Through Hope" data-ar="من خلال الأمل">Through Hope</span>
+          </h1>
+          <p class="hero-description" data-en="Empowering youth and fostering positive change in Lebanon through volunteer work, community engagement, and meaningful connections that transcend differences." data-ar="تمكين الشباب وتعزيز التغيير الإيجابي في لبنان من خلال العمل التطوعي والمشاركة المجتمعية.">
+            Empowering youth and fostering positive change in Lebanon through volunteer work, community engagement, and meaningful connections that transcend differences.
+          </p>
+          <div class="hero-buttons">
+            <a href="#get-involved" class="btn btn-gold btn-lg" data-en="🤝 Become a Volunteer" data-ar="🤝 كن متطوعاً">🤝 Become a Volunteer</a>
+            <a href="#about" class="btn btn-outline btn-lg" data-en="Learn More →" data-ar="اعرف أكثر →">Learn More →</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="hero-stat-number" data-count="2017" data-suffix="">2017</div>
+              <div class="hero-stat-label" data-en="Year Founded" data-ar="سنة التأسيس">Year Founded</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-number">~30</div>
+              <div class="hero-stat-label" data-en="Active Volunteers" data-ar="متطوع نشط">Active Volunteers</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-number">100<span class="suffix">+</span></div>
+              <div class="hero-stat-label" data-en="Activities per Year" data-ar="نشاط في السنة">Activities per Year</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image-area">
+          <div class="hero-image-card">
+            <img src="https://cdn.hercules.app/file_Ze8G3Y8irK4ZYygjl8xG3wmt" alt="Ana Khayyak Team" />
+            <div class="hero-image-overlay"></div>
+            <div class="hero-image-badge">
+              <div class="hero-image-badge-title">🌟 100+ Activities per Year</div>
+              <div class="hero-image-badge-sub">Across all regions of Lebanon</div>
+            </div>
+          </div>
+          <div class="floating-card floating-card-1">
+            <div class="floating-card-icon fc-blue">👥</div>
+            <div>
+              <div class="floating-card-text">~30 Volunteers</div>
+              <div class="floating-card-sub">Active members</div>
+            </div>
+          </div>
+          <div class="floating-card floating-card-2">
+            <div class="floating-card-icon fc-gold">❤️</div>
+            <div>
+              <div class="floating-card-text">1,000+ Lives Touched</div>
+              <div class="floating-card-sub">And growing</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- Partners Strip -->
+  <div class="partners-strip">
+    <div class="marquee">
+      <div class="marquee-item"><span>AUB</span><span class="marquee-dot"></span></div>
+      <div class="marquee-item"><span>LAU</span><span class="marquee-dot"></span></div>
+      <div class="marquee-item"><span>USJ</span><span class="marquee-dot"></span></div>
+      <div class="marquee-item"><span>Lebanese University</span><span class="marquee-dot"></span></div>
+      <div class="marquee-item"><span>Adyan Foundation</span><span class="marquee-dot"></span></div>
+      <div class="marquee-item"><span>Strategic Thinking Partners</span><span class="marquee-dot"></span></div>
+      <div class="marquee-item"><span>AUB</span><span class="marquee-dot"></span></div>
+      <div class="marquee-item"><span>LAU</span><span class="marquee-dot"></span></div>
+      <div class="marquee-item"><span>USJ</span><span class="marquee-dot"></span></div>
+      <div class="marquee-item"><span>Lebanese University</span><span class="marquee-dot"></span></div>
+      <div class="marquee-item"><span>Adyan Foundation</span><span class="marquee-dot"></span></div>
+      <div class="marquee-item"><span>Strategic Thinking Partners</span><span class="marquee-dot"></span></div>
+    </div>
+  </div>
+
+  <!-- ===========================
+       ABOUT
+  =========================== -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-images fade-up">
+          <div class="about-img-main">
+            <img src="https://cdn.hercules.app/file_HJHHZSvy1X59wGNtmIAcy4mY" alt="Ana Khayyak volunteers with community members" />
+          </div>
+          <div class="about-img-accent">
+            <img src="https://cdn.hercules.app/file_y6lChxqQy8fvD96gXlEO0Z4S" alt="Ana Khayyak activity" />
+          </div>
+          <div class="years-badge">
+            <div class="years-badge-number">7+</div>
+            <div class="years-badge-text">Years of<br>Impact</div>
+          </div>
+        </div>
+
+        <div class="about-content fade-up fade-delay-2">
+          <div class="section-label" data-en="🌍 Our Story" data-ar="🌍 قصتنا">🌍 Our Story</div>
+          <h2 class="section-title">
+            <span data-en="More Than an NGO —" data-ar="أكثر من منظمة —">More Than an NGO —</span><br><span data-en="A " data-ar="عائلة من ">A </span><span class="highlight" data-en="Family of Changemakers" data-ar="صانعي التغيير">Family of Changemakers</span>
+          </h2>
+          <p class="section-subtitle" data-en="Ana Khayyak was founded in 2017 with a simple yet powerful vision: to build hope and create positive change in Lebanese communities through the power of youth volunteerism. What started as a small group of passionate individuals has grown into a vibrant community of over 30 dedicated volunteers, working across different regions, faiths, and backgrounds to serve those in need." data-ar="تأسست أنا خيّاك عام 2017 برؤية بسيطة وقوية: بناء الأمل وإحداث تغيير إيجابي في المجتمعات اللبنانية من خلال قوة تطوع الشباب.">
+            Ana Khayyak was founded in 2017 with a simple yet powerful vision: to build hope and create positive change in Lebanese communities through the power of youth volunteerism. What started as a small group of passionate individuals has grown into a vibrant community of over 30 dedicated volunteers, working across different regions, faiths, and backgrounds to serve those in need.
+          </p>
+          <div class="about-features">
+            <div class="about-feature">
+              <div class="about-feature-icon">🏘️</div>
+              <div>
+                <div class="about-feature-title" data-en="Community-First" data-ar="المجتمع أولاً">Community-First</div>
+                <div class="about-feature-text" data-en="Rooted in the needs of local Lebanese communities" data-ar="متجذرون في احتياجات المجتمعات اللبنانية المحلية">Rooted in the needs of local Lebanese communities</div>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">🤝</div>
+              <div>
+                <div class="about-feature-title" data-en="Cross-Cultural" data-ar="متعدد الثقافات">Cross-Cultural</div>
+                <div class="about-feature-text" data-en="Volunteers from different faiths, regions &amp; backgrounds" data-ar="متطوعون من مختلف الأديان والمناطق والخلفيات">Volunteers from different faiths, regions &amp; backgrounds</div>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">🎓</div>
+              <div>
+                <div class="about-feature-title" data-en="Youth-Led" data-ar="بقيادة الشباب">Youth-Led</div>
+                <div class="about-feature-text" data-en="Empowering the next generation of Lebanese leaders" data-ar="تمكين الجيل القادم من القادة اللبنانيين">Empowering the next generation of Lebanese leaders</div>
+              </div>
+            </div>
+            <div class="about-feature">
+              <div class="about-feature-icon">📊</div>
+              <div>
+                <div class="about-feature-title" data-en="Evidence-Based" data-ar="مبني على الأدلة">Evidence-Based</div>
+                <div class="about-feature-text" data-en="Programs grounded in real community impact data" data-ar="برامج مبنية على بيانات التأثير المجتمعي الحقيقي">Programs grounded in real community impact data</div>
+              </div>
+            </div>
+          </div>
+          <a href="#get-involved" class="btn btn-primary btn-lg" data-en="Join Our Community →" data-ar="انضم إلى مجتمعنا →">Join Our Community →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       MISSION / VISION / VALUES
+  =========================== -->
+  <section id="mission" class="section">
+    <div class="container">
+      <div class="section-header center fade-up">
+        <div class="section-label" data-en="💡 Who We Are" data-ar="💡 من نحن">💡 Who We Are</div>
+        <h2 class="section-title"><span data-en="Our Mission, Vision & " data-ar="مهمتنا ورؤيتنا و">Our Mission, Vision & </span><span class="highlight" data-en="Values" data-ar="قيمنا">Values</span></h2>
+        <p class="section-subtitle" data-en="The principles and purpose that guide every action we take in Lebanese communities." data-ar="المبادئ والغاية التي توجه كل إجراء نتخذه في المجتمعات اللبنانية.">The principles and purpose that guide every action we take in Lebanese communities.</p>
+      </div>
+
+      <div class="mvv-grid">
+        <div class="mvv-card fade-up">
+          <div class="mvv-icon">🎯</div>
+          <div class="mvv-card-title" data-en="Our Mission" data-ar="مهمتنا">Our Mission</div>
+          <p class="mvv-card-text" data-en="To empower youth through volunteer opportunities that foster personal development, social cohesion, and community impact. We create spaces for meaningful engagement, dialogue, and action that address the needs of vulnerable populations across Lebanon." data-ar="تمكين الشباب من خلال فرص تطوعية تعزز التنمية الشخصية والتماسك الاجتماعي وأثر المجتمع.">
+            To empower youth through volunteer opportunities that foster personal development, social cohesion, and community impact. We create spaces for meaningful engagement, dialogue, and action that address the needs of vulnerable populations across Lebanon.
+          </p>
+        </div>
+        <div class="mvv-card fade-up fade-delay-1">
+          <div class="mvv-icon">🌟</div>
+          <div class="mvv-card-title" data-en="Our Vision" data-ar="رؤيتنا">Our Vision</div>
+          <p class="mvv-card-text" data-en="A Lebanon where every individual, regardless of their background, has access to opportunities for growth, connection, and meaningful contribution to their communities — a society built on mutual respect, understanding, and solidarity." data-ar="لبنان يتمتع فيه كل فرد، بغض النظر عن خلفيته، بفرص للنمو والتواصل والمساهمة المجتمعية.">
+            A Lebanon where every individual, regardless of their background, has access to opportunities for growth, connection, and meaningful contribution to their communities — a society built on mutual respect, understanding, and solidarity.
+          </p>
+        </div>
+        <div class="mvv-card fade-up fade-delay-2" style="--before-bg: linear-gradient(90deg, var(--gold), #f8c55a);">
+          <div class="mvv-icon" style="background: var(--gold-light);">🌍</div>
+          <div class="mvv-card-title" data-en="Our Approach" data-ar="نهجنا">Our Approach</div>
+          <p class="mvv-card-text" data-en="We collaborate with universities, foundations, and organizations across Lebanon to implement evidence-based programs. Our partnerships amplify our reach, connecting students, young professionals, and community leaders to drive real, lasting change." data-ar="نتعاون مع الجامعات والمؤسسات والمنظمات في جميع أنحاء لبنان لتطبيق برامج مبنية على الأدلة. تضخّم شراكاتنا مدى وصولنا، وتربط الطلاب والمهنيين الشباب وقادة المجتمع لإحداث تغيير حقيقي ودائم.">We collaborate with universities, foundations, and organizations across Lebanon to implement evidence-based programs. Our partnerships amplify our reach, connecting students, young professionals, and community leaders to drive real, lasting change.</p>
+        </div>
+      </div>
+
+      <div class="fade-up" style="margin-top: 16px;">
+        <h3 style="text-align:center; font-size:22px; font-weight:800; margin-bottom:28px; color: var(--text-dark);" data-en="The Values We Live By" data-ar="القيم التي نعيشها">The Values We Live By</h3>
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-emoji">❤️</div>
+            <div class="value-name" data-en="Love" data-ar="الحب">Love</div>
+            <div class="value-desc" data-en="Building connections through compassion and genuine care for every person we serve." data-ar="بناء الروابط من خلال الرحمة والاهتمام الحقيقي بكل شخص نخدمه.">Building connections through compassion and genuine care for every person we serve.</div>
+          </div>
+          <div class="value-card">
+            <div class="value-emoji">🌱</div>
+            <div class="value-name" data-en="Hope" data-ar="الأمل">Hope</div>
+            <div class="value-desc" data-en="Inspiring positive change in every community, even in the most challenging of circumstances." data-ar="إلهام التغيير الإيجابي في كل مجتمع، حتى في أصعب الظروف.">Inspiring positive change in every community, even in the most challenging of circumstances.</div>
+          </div>
+          <div class="value-card">
+            <div class="value-emoji">⚡</div>
+            <div class="value-name" data-en="Boldness" data-ar="الجرأة">Boldness</div>
+            <div class="value-desc" data-en="Taking courageous steps towards a better future, challenging the status quo with conviction." data-ar="اتخاذ خطوات جريئة نحو مستقبل أفضل، وتحدي الوضع الراهن بإقناع.">Taking courageous steps towards a better future, challenging the status quo with conviction.</div>
+          </div>
+          <div class="value-card">
+            <div class="value-emoji">👨‍👩‍👧‍👦</div>
+            <div class="value-name" data-en="Siblinghood" data-ar="الأخوة">Siblinghood</div>
+            <div class="value-desc" data-en="Creating bonds that transcend differences — of faith, background, and geography — across all of Lebanon." data-ar="خلق روابط تتجاوز الاختلافات — في الديانة والخلفية والجغرافيا — في لبنان.">Creating bonds that transcend differences — of faith, background, and geography — across all of Lebanon.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       ACTIVITIES
+  =========================== -->
+  <section id="activities" class="section">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="section-label" data-en="🌟 What We Do" data-ar="🌟 ما نقوم به">🌟 What We Do</div>
+        <h2 class="section-title"><span data-en="Our " data-ar="برامجنا و">Our </span><span class="highlight" data-en="Programs" data-ar="أنشطتنا">Programs</span><span data-en=" & Activities" data-ar=""> & Activities</span></h2>
+        <p class="section-subtitle" data-en="Discover the various programs and initiatives we organize to serve communities and empower youth across Lebanon." data-ar="اكتشف البرامج والمبادرات المختلفة التي ننظمها لخدمة المجتمعات وتمكين الشباب في جميع أنحاء لبنان.">Discover the various programs and initiatives we organize to serve communities and empower youth across Lebanon.</p>
+      </div>
+
+      <div class="activities-grid">
+        <div class="activity-card fade-up">
+          <div class="activity-img">
+            <img src="https://cdn.hercules.app/file_HJHHZSvy1X59wGNtmIAcy4mY" alt="Community Outreach" />
+            <div class="activity-category" data-en="Ongoing Program" data-ar="برنامج مستمر">Ongoing Program</div>
+          </div>
+          <div class="activity-body">
+            <div class="activity-icon">👥</div>
+            <div class="activity-title" data-en="Community Outreach" data-ar="التواصل المجتمعي">Community Outreach</div>
+            <p class="activity-desc" data-en="Regular visits and support programs for underserved communities across Lebanon. Our volunteers provide direct assistance, companionship, and resources to families and individuals who need it most." data-ar="زيارات منتظمة وبرامج دعم للمجتمعات المحرومة في جميع أنحاء لبنان.">
+              Regular visits and support programs for underserved communities across Lebanon. Our volunteers provide direct assistance, companionship, and resources to families and individuals who need it most.
+            </p>
+          </div>
+          <div class="activity-footer">
+            <span class="activity-tag" data-en="Weekly" data-ar="أسبوعياً">Weekly</span>
+            <div class="activity-arrow">→</div>
+          </div>
+        </div>
+
+        <div class="activity-card fade-up fade-delay-1">
+          <div class="activity-img">
+            <img src="https://cdn.hercules.app/file_yXxviqcBeFq23NHtsf0jsJ35" alt="Youth Workshops" />
+            <div class="activity-category" data-en="Core Program" data-ar="برنامج أساسي">Core Program</div>
+          </div>
+          <div class="activity-body">
+            <div class="activity-icon">📚</div>
+            <div class="activity-title" data-en="Youth Workshops" data-ar="ورش عمل الشباب">Youth Workshops</div>
+            <p class="activity-desc" data-en="Educational and skills development workshops for young people, empowering them with the knowledge, tools, and confidence to succeed. Topics include leadership, communication, critical thinking, and professional development." data-ar="ورش عمل تعليمية وتنمية مهارات للشباب، لتمكينهم بالمعرفة والأدوات والثقة للنجاح.">
+              Educational and skills development workshops for young people, empowering them with the knowledge, tools, and confidence to succeed. Topics include leadership, communication, critical thinking, and professional development.
+            </p>
+          </div>
+          <div class="activity-footer">
+            <span class="activity-tag" data-en="Monthly" data-ar="شهرياً">Monthly</span>
+            <div class="activity-arrow">→</div>
+          </div>
+        </div>
+
+        <div class="activity-card fade-up fade-delay-2">
+          <div class="activity-img">
+            <img src="https://cdn.hercules.app/file_tp4q1rpgTWknHPS2G1dvIskD" alt="Cultural Events" />
+            <div class="activity-category" data-en="Diversity Initiative" data-ar="مبادرة تنوع">Diversity Initiative</div>
+          </div>
+          <div class="activity-body">
+            <div class="activity-icon">🕊️</div>
+            <div class="activity-title" data-en="Cultural Events" data-ar="الفعاليات الثقافية">Cultural Events</div>
+            <p class="activity-desc" data-en="Events that celebrate Lebanon's rich cultural diversity and promote understanding between different communities. These gatherings bring together people from different faiths, regions, and backgrounds in the spirit of togetherness." data-ar="فعاليات تحتفل بالتنوع الثقافي الغني للبنان وتعزز التفاهم بين المجتمعات المختلفة.">
+              Events that celebrate Lebanon's rich cultural diversity and promote understanding between different communities. These gatherings bring together people from different faiths, regions, and backgrounds in the spirit of togetherness.
+            </p>
+          </div>
+          <div class="activity-footer">
+            <span class="activity-tag" data-en="Seasonal" data-ar="موسمياً">Seasonal</span>
+            <div class="activity-arrow">→</div>
+          </div>
+        </div>
+
+        <div class="activity-card fade-up fade-delay-3">
+          <div class="activity-img">
+            <img src="https://cdn.hercules.app/file_n5nbqb2ladogqOOiwA3q15cy" alt="Special Programs" />
+            <div class="activity-category" data-en="Emergency Response" data-ar="استجابة طارئة">Emergency Response</div>
+          </div>
+          <div class="activity-body">
+            <div class="activity-icon">🗓️</div>
+            <div class="activity-title" data-en="Special Programs" data-ar="البرامج الخاصة">Special Programs</div>
+            <p class="activity-desc" data-en="Seasonal activities and special initiatives responding to urgent community needs — from post-disaster relief efforts to holiday support programs for vulnerable families. Ana Khayyak mobilizes rapidly when communities need it most." data-ar="أنشطة موسمية ومبادرات خاصة للاستجابة للاحتياجات المجتمعية الملحة.">
+              Seasonal activities and special initiatives responding to urgent community needs — from post-disaster relief efforts to holiday support programs for vulnerable families. Ana Khayyak mobilizes rapidly when communities need it most.
+            </p>
+          </div>
+          <div class="activity-footer">
+            <span class="activity-tag" data-en="As Needed" data-ar="عند الحاجة">As Needed</span>
+            <div class="activity-arrow">→</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       IMPACT
+  =========================== -->
+  <section id="impact">
+    <div class="container">
+      <div class="impact-inner fade-up">
+        <div class="section-label" data-en="📊 Our Impact" data-ar="📊 أثرنا">📊 Our Impact</div>
+        <h2 class="section-title"><span data-en="Numbers That Tell " data-ar="أرقام تحكي ">Numbers That Tell </span><span style="color: var(--gold);" data-en="Our Story" data-ar="قصتنا">Our Story</span></h2>
+        <p class="section-subtitle" data-en="Every number represents a real person, a real community, a real moment of change in Lebanon." data-ar="كل رقم يمثّل شخصاً حقيقياً، ومجتمعاً حقيقياً، ولحظة تغيير حقيقية في لبنان.">Every number represents a real person, a real community, a real moment of change in Lebanon.</p>
+      </div>
+      <div class="impact-stats fade-up">
+        <div class="impact-stat">
+          <div class="impact-stat-icon">🏢</div>
+          <div class="impact-stat-number"><span class="counter" data-target="2017" data-plain>2017</span></div>
+          <div class="impact-stat-label" data-en="Year Founded" data-ar="سنة التأسيس">Year Founded</div>
+        </div>
+        <div class="impact-stat">
+          <div class="impact-stat-icon">👐</div>
+          <div class="impact-stat-number"><span class="counter" data-target="30">0</span><span class="suffix">+</span></div>
+          <div class="impact-stat-label" data-en="Active Volunteers" data-ar="متطوع نشط">Active Volunteers</div>
+        </div>
+        <div class="impact-stat">
+          <div class="impact-stat-icon">📅</div>
+          <div class="impact-stat-number"><span class="counter" data-target="100">0</span><span class="suffix">+</span></div>
+          <div class="impact-stat-label" data-en="Activities per Year" data-ar="نشاط في السنة">Activities per Year</div>
+        </div>
+        <div class="impact-stat">
+          <div class="impact-stat-icon">💛</div>
+          <div class="impact-stat-number"><span class="counter" data-target="1000">0</span><span class="suffix">+</span></div>
+          <div class="impact-stat-label" data-en="People Reached" data-ar="شخص تم الوصول إليهم">People Reached</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       PARTNERS
+  =========================== -->
+  <section id="partners" class="section">
+    <div class="container">
+      <div class="partners-intro">
+        <div class="fade-up">
+          <div class="section-label" data-en="🤝 Partnerships" data-ar="🤝 شراكاتنا">🤝 Partnerships</div>
+          <h2 class="section-title"><span data-en="Building Together for " data-ar="نبني معاً من أجل ">Building Together for </span><span class="highlight" data-en="Greater Impact" data-ar="تأثير أكبر">Greater Impact</span></h2>
+          <p class="section-subtitle" data-en="We collaborate with leading educational institutions, foundations, and organizations across Lebanon to amplify our reach and deepen our impact." data-ar="نتعاون مع كبرى المؤسسات التعليمية والمنظمات في لبنان لتوسيع مدى وصولنا وتعميق أثرنا.">We collaborate with leading educational institutions, foundations, and organizations across Lebanon to amplify our reach and deepen our impact.</p>
+          <br>
+          <p style="font-size:15px; color: var(--gray-600); line-height:1.75;" data-en="Our partnerships with universities like AUB, LAU, USJ, and LU help us engage with students and young professionals, while our work with organizations like Adyan Foundation and Strategic Thinking Partners enables us to implement evidence-based programs that drive real change." data-ar="تساعدنا شراكاتنا مع جامعات كـ AUB وLAU وUSJ وLU في التواصل مع الطلاب والمهنيين الشباب، بينما يُمكّننا عملنا مع مؤسسة أديان وستراتيجيك ثينكينج بارتنرز من تطبيق برامج مبنية على الأدلة تُحدث تغييراً حقيقياً.">Our partnerships with universities like AUB, LAU, USJ, and LU help us engage with students and young professionals, while our work with organizations like Adyan Foundation and Strategic Thinking Partners enables us to implement evidence-based programs that drive real change.</p>
+        </div>
+        <div class="partners-grid fade-up fade-delay-2">
+          <div class="partner-card">
+            <div class="partner-abbr">AUB</div>
+            <div class="partner-name" data-en="American University of Beirut" data-ar="الجامعة الأمريكية في بيروت">American University of Beirut</div>
+            <div class="partner-type" data-en="University Partner" data-ar="شريك جامعي">University Partner</div>
+          </div>
+          <div class="partner-card">
+            <div class="partner-abbr">LAU</div>
+            <div class="partner-name" data-en="Lebanese American University" data-ar="الجامعة اللبنانية الأمريكية">Lebanese American University</div>
+            <div class="partner-type" data-en="University Partner" data-ar="شريك جامعي">University Partner</div>
+          </div>
+          <div class="partner-card">
+            <div class="partner-abbr">USJ</div>
+            <div class="partner-name">Université Saint-Joseph</div>
+            <div class="partner-type" data-en="University Partner" data-ar="شريك جامعي">University Partner</div>
+          </div>
+          <div class="partner-card">
+            <div class="partner-abbr">LU</div>
+            <div class="partner-name" data-en="Lebanese University" data-ar="الجامعة اللبنانية">Lebanese University</div>
+            <div class="partner-type" data-en="University Partner" data-ar="شريك جامعي">University Partner</div>
+          </div>
+          <div class="partner-card">
+            <div class="partner-abbr">Adyan</div>
+            <div class="partner-name" data-en="Adyan Foundation" data-ar="مؤسسة أديان">Adyan Foundation</div>
+            <div class="partner-type" data-en="NGO Partner" data-ar="شريك منظمة غير حكومية">NGO Partner</div>
+          </div>
+          <div class="partner-card">
+            <div class="partner-abbr">STP</div>
+            <div class="partner-name" data-en="Strategic Thinking Partners" data-ar="ستراتيجيك ثينكينج بارتنرز">Strategic Thinking Partners</div>
+            <div class="partner-type" data-en="Program Partner" data-ar="شريك برنامج">Program Partner</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       GET INVOLVED (VOLUNTEER + DONATE)
+  =========================== -->
+  <section id="get-involved" class="section" style="background: var(--gray-50);">
+    <div class="container">
+      <div class="section-header fade-up">
+        <div class="section-label" data-en="💪 Get Involved" data-ar="💪 شارك معنا">💪 Get Involved</div>
+        <h2 class="section-title"><span data-en="Be Part of the " data-ar="كن جزءاً من ">Be Part of the </span><span class="highlight" data-en="Change" data-ar="التغيير">Change</span></h2>
+        <p class="section-subtitle" data-en="Whether you volunteer your time or support us financially, every contribution makes a real difference in Lebanese communities." data-ar="سواء تطوّعت بوقتك أو دعمتنا مالياً، كل مساهمة تُحدث فرقاً حقيقياً في المجتمعات اللبنانية.">Whether you volunteer your time or support us financially, every contribution makes a real difference in Lebanese communities.</p>
+      </div>
+
+      <div class="involved-tabs fade-up">
+        <button class="involved-tab active" onclick="switchTab('volunteer')" data-en="🤝 Become a Volunteer" data-ar="🤝 كن متطوعاً">🤝 Become a Volunteer</button>
+        <button class="involved-tab" onclick="switchTab('donate')" data-en="💛 Donate" data-ar="💛 تبرع">💛 Donate</button>
+      </div>
+
+      <!-- Volunteer Form -->
+      <div id="tab-volunteer" class="tab-content active fade-up">
+        <div style="display:grid; grid-template-columns: 1fr 1.6fr; gap:48px; align-items:start;">
+          <div>
+            <h3 style="font-size:22px; font-weight:800; margin-bottom:14px;" data-en="Why Volunteer With Us?" data-ar="لماذا تتطوع معنا؟">Why Volunteer With Us?</h3>
+            <p style="font-size:15px; color: var(--gray-600); line-height:1.75; margin-bottom:24px;" data-en="Join a diverse community of passionate individuals committed to making a positive difference in Lebanon. As an Ana Khayyak volunteer, you'll gain real-world experience, forge meaningful friendships, and create lasting change." data-ar="انضم إلى مجتمع متنوع من الأفراد الشغوفين الملتزمين بإحداث فرق إيجابي في لبنان. كمتطوع في أنا خيّاك، ستكتسب خبرة عملية وتبني صداقات حقيقية وتُحدث تغييراً دائماً.">Join a diverse community of passionate individuals committed to making a positive difference in Lebanon. As an Ana Khayyak volunteer, you'll gain real-world experience, forge meaningful friendships, and create lasting change.</p>
+            <div style="display:flex; flex-direction:column; gap:14px;">
+              <div style="display:flex; gap:12px; align-items:center;">
+                <span style="font-size:22px;">🌍</span>
+                <div>
+                  <div style="font-weight:700; font-size:14px;" data-en="Cross-Cultural Community" data-ar="مجتمع متعدد الثقافات">Cross-Cultural Community</div>
+                  <div style="font-size:13px; color:var(--gray-600);" data-en="Meet volunteers from all backgrounds &amp; faiths" data-ar="التقِ بمتطوعين من جميع الخلفيات والأديان">Meet volunteers from all backgrounds &amp; faiths</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:center;">
+                <span style="font-size:22px;">📈</span>
+                <div>
+                  <div style="font-weight:700; font-size:14px;" data-en="Grow Personally &amp; Professionally" data-ar="انمُ شخصياً ومهنياً">Grow Personally &amp; Professionally</div>
+                  <div style="font-size:13px; color:var(--gray-600);" data-en="Leadership training &amp; real-world skills" data-ar="تدريب على القيادة ومهارات عملية">Leadership training &amp; real-world skills</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:center;">
+                <span style="font-size:22px;">🏅</span>
+                <div>
+                  <div style="font-weight:700; font-size:14px;" data-en="Recognition &amp; Certification" data-ar="تقدير وشهادات">Recognition &amp; Certification</div>
+                  <div style="font-size:13px; color:var(--gray-600);" data-en="Volunteer certificates recognized by partners" data-ar="شهادات تطوع معترف بها من الشركاء">Volunteer certificates recognized by partners</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; align-items:center;">
+                <span style="font-size:22px;">❤️</span>
+                <div>
+                  <div style="font-weight:700; font-size:14px;" data-en="Make Real Impact" data-ar="أحدث أثراً حقيقياً">Make Real Impact</div>
+                  <div style="font-size:13px; color:var(--gray-600);" data-en="See the change you create in real communities" data-ar="شاهد التغيير الذي تُحدثه في مجتمعات حقيقية">See the change you create in real communities</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="background:white; border-radius: var(--radius-lg); padding:36px; border:1.5px solid var(--gray-200); box-shadow: var(--shadow-sm);">
+            <h3 style="font-size:20px; font-weight:800; margin-bottom:24px;" data-en="Volunteer Application" data-ar="طلب تطوع">Volunteer Application</h3>
+            <div id="volunteerFormSuccess" class="form-success">
+              <div class="form-success-icon">✅</div>
+              <div class="form-success-title">Application Received!</div>
+              <p class="form-success-text">Thank you for wanting to join Ana Khayyak! We'll review your application and get back to you within 3–5 business days.</p>
+            </div>
+            <form id="volunteerForm" onsubmit="submitVolunteer(event)">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label">First Name <span>*</span></label>
+                  <input type="text" class="form-input" placeholder="Yara" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Last Name <span>*</span></label>
+                  <input type="text" class="form-input" placeholder="Khalil" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Email Address <span>*</span></label>
+                  <input type="email" class="form-input" placeholder="yara@example.com" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Phone Number</label>
+                  <input type="tel" class="form-input" placeholder="+961 70 000 000" />
+                </div>
+                <div class="form-group">
+                  <label class="form-label">City / Region <span>*</span></label>
+                  <select class="form-select" required>
+                    <option value="">Select your region</option>
+                    <option>Beirut</option>
+                    <option>Mount Lebanon</option>
+                    <option>North Lebanon</option>
+                    <option>South Lebanon</option>
+                    <option>Bekaa</option>
+                    <option>Nabatieh</option>
+                    <option>Outside Lebanon</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Area of Interest <span>*</span></label>
+                  <select class="form-select" required>
+                    <option value="">Select an area</option>
+                    <option>Community Outreach</option>
+                    <option>Youth Workshops</option>
+                    <option>Cultural Events</option>
+                    <option>Special Programs</option>
+                    <option>Administration / Operations</option>
+                    <option>Media &amp; Communications</option>
+                    <option>Open to anything!</option>
+                  </select>
+                </div>
+                <div class="form-group form-full">
+                  <label class="form-label">Tell us about yourself &amp; why you want to volunteer</label>
+                  <textarea class="form-textarea" placeholder="Share your motivation, relevant experience, and what you hope to contribute..."></textarea>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg" style="width:100%; margin-top:8px; justify-content:center;" data-en="Submit Application →" data-ar="إرسال الطلب →">Submit Application →</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Donate Tab -->
+      <div id="tab-donate" class="tab-content fade-up">
+        <div style="display:grid; grid-template-columns: 1fr 1.6fr; gap:48px; align-items:start;">
+          <div>
+            <h3 style="font-size:22px; font-weight:800; margin-bottom:14px;" data-en="Your Donation Creates Change" data-ar="تبرعك يصنع التغيير">Your Donation Creates Change</h3>
+            <p style="font-size:15px; color: var(--gray-600); line-height:1.75; margin-bottom:24px;" data-en="Every contribution, big or small, makes a real difference in the lives of those we serve. Your donation enables us to expand our reach and deepen our impact across Lebanon." data-ar="كل مساهمة، صغيرة كانت أم كبيرة، تُحدث فرقاً حقيقياً في حياة من نخدمهم. تبرعك يُمكّننا من توسيع مدى وصولنا وتعميق أثرنا في لبنان.">Every contribution, big or small, makes a real difference in the lives of those we serve. Your donation enables us to expand our reach and deepen our impact across Lebanon.</p>
+            <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:28px;">
+              <div style="display:flex; gap:12px; padding:14px; background:white; border-radius:var(--radius-sm); border:1.5px solid var(--gray-200);">
+                <span style="font-size:24px;">👨‍👩‍👧</span>
+                <div>
+                  <div style="font-weight:700; font-size:14px;">Community Programs</div>
+                  <div style="font-size:13px; color:var(--gray-600);">Support outreach activities for vulnerable communities</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; padding:14px; background:white; border-radius:var(--radius-sm); border:1.5px solid var(--gray-200);">
+                <span style="font-size:24px;">📖</span>
+                <div>
+                  <div style="font-weight:700; font-size:14px;">Educational Workshops</div>
+                  <div style="font-size:13px; color:var(--gray-600);">Fund training sessions that empower youth</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; padding:14px; background:white; border-radius:var(--radius-sm); border:1.5px solid var(--gray-200);">
+                <span style="font-size:24px;">🏠</span>
+                <div>
+                  <div style="font-weight:700; font-size:14px;">Operational Support</div>
+                  <div style="font-size:13px; color:var(--gray-600);">Help maintain our facilities and resources</div>
+                </div>
+              </div>
+              <div style="display:flex; gap:12px; padding:14px; background:white; border-radius:var(--radius-sm); border:1.5px solid var(--gray-200);">
+                <span style="font-size:24px;">🆘</span>
+                <div>
+                  <div style="font-weight:700; font-size:14px;">Emergency Relief</div>
+                  <div style="font-size:13px; color:var(--gray-600);">Enable rapid response to urgent community crises</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="background:white; border-radius: var(--radius-lg); padding:36px; border:1.5px solid var(--gray-200); box-shadow: var(--shadow-sm);">
+            <h3 style="font-size:20px; font-weight:800; margin-bottom:8px;" data-en="Choose Your Donation" data-ar="اختر مبلغ تبرعك">Choose Your Donation</h3>
+            <p style="font-size:14px; color: var(--gray-600); margin-bottom:24px;" data-en="Select an amount or enter your own. All donations go directly to our programs." data-ar="اختر مبلغاً أو أدخل مبلغاً مخصصاً. جميع التبرعات تذهب مباشرة إلى برامجنا.">Select an amount or enter your own. All donations go directly to our programs.</p>
+
+            <div style="font-size:13px; font-weight:600; color:var(--gray-800); margin-bottom:10px;" data-en="Select Amount (USD)" data-ar="اختر المبلغ (دولار)">Select Amount (USD)</div>
+            <div class="donate-amounts">
+              <button class="donate-amount" onclick="selectAmount(this, 25)"><div class="currency">USD</div>25</button>
+              <button class="donate-amount active" onclick="selectAmount(this, 50)"><div class="currency">USD</div>50</button>
+              <button class="donate-amount" onclick="selectAmount(this, 100)"><div class="currency">USD</div>100</button>
+              <button class="donate-amount" onclick="selectAmount(this, null)"><div class="currency">Other</div>✏️</button>
+            </div>
+            <div id="customAmountWrapper" style="display:none; margin-bottom:16px;">
+              <input type="number" class="form-input" id="customAmount" placeholder="Enter amount in USD" min="1" />
+            </div>
+
+            <div style="font-size:13px; font-weight:600; color:var(--gray-800); margin-bottom:10px;" data-en="Dedicated to" data-ar="مخصص لـ">Dedicated to</div>
+            <div class="donate-purposes">
+              <label class="donate-purpose">
+                <input type="radio" name="purpose" value="community" checked />
+                <span class="donate-purpose-icon">👨‍👩‍👧</span>
+                <div>
+                  <div class="donate-purpose-title">Community Programs</div>
+                  <div class="donate-purpose-desc">Direct community support</div>
+                </div>
+              </label>
+              <label class="donate-purpose">
+                <input type="radio" name="purpose" value="education" />
+                <span class="donate-purpose-icon">📖</span>
+                <div>
+                  <div class="donate-purpose-title">Education</div>
+                  <div class="donate-purpose-desc">Workshops &amp; training</div>
+                </div>
+              </label>
+              <label class="donate-purpose">
+                <input type="radio" name="purpose" value="operations" />
+                <span class="donate-purpose-icon">🏠</span>
+                <div>
+                  <div class="donate-purpose-title">Operations</div>
+                  <div class="donate-purpose-desc">Keep the org running</div>
+                </div>
+              </label>
+              <label class="donate-purpose">
+                <input type="radio" name="purpose" value="emergency" />
+                <span class="donate-purpose-icon">🆘</span>
+                <div>
+                  <div class="donate-purpose-title">Emergency Relief</div>
+                  <div class="donate-purpose-desc">Crisis response</div>
+                </div>
+              </label>
+            </div>
+
+            <div class="bank-details">
+              <div class="bank-details-title">🏦 Bank Transfer Details</div>
+              <div class="bank-row">
+                <div class="bank-row-label">Bank Name</div>
+                <div class="bank-row-value">Bank of Beirut</div>
+              </div>
+              <div class="bank-row">
+                <div class="bank-row-label">Account Name</div>
+                <div class="bank-row-value">Ana Khayyak NGO</div>
+              </div>
+              <div class="bank-row">
+                <div class="bank-row-label">Account Number</div>
+                <div class="bank-row-value">Contact us for details</div>
+              </div>
+              <div class="bank-row">
+                <div class="bank-row-label">SWIFT / BIC</div>
+                <div class="bank-row-value">Contact us for details</div>
+              </div>
+              <div class="bank-row">
+                <div class="bank-row-label">Currency</div>
+                <div class="bank-row-value">USD / LBP</div>
+              </div>
+            </div>
+
+            <button class="btn btn-gold btn-lg" style="width:100%; justify-content:center; margin-top:20px;" onclick="handleDonate()" data-en="💛 Confirm Donation Intent" data-ar="💛 تأكيد نية التبرع">
+              💛 Confirm Donation Intent
+            </button>
+            <p style="text-align:center; font-size:12px; color:var(--gray-400); margin-top:12px;" data-en="We'll contact you with full payment instructions within 24 hours." data-ar="سنتواصل معك مع تعليمات الدفع الكاملة خلال 24 ساعة.">We'll contact you with full payment instructions within 24 hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       CONTACT
+  =========================== -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header center fade-up">
+        <div class="section-label" data-en="📬 Get In Touch" data-ar="📬 تواصل معنا">📬 Get In Touch</div>
+        <h2 class="section-title"><span data-en="Let's " data-ar="لنتواصل ">Let's </span><span class="highlight" data-en="Connect" data-ar="معاً">Connect</span></h2>
+        <p class="section-subtitle" data-en="Whether you're a volunteer, donor, partner, or simply want to learn more — we'd love to hear from you." data-ar="سواء كنت متطوعاً أو مانحاً أو شريكاً أو تريد ببساطة معرفة المزيد — يسعدنا سماعك.">Whether you're a volunteer, donor, partner, or simply want to learn more — we'd love to hear from you.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info fade-up">
+          <div class="contact-card">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-card-label" data-en="Location" data-ar="الموقع">Location</div>
+              <div class="contact-card-value" data-en="Beirut, Lebanon" data-ar="بيروت، لبنان">Beirut, Lebanon</div>
+              <div class="contact-card-sub" data-en="Operating across all Lebanese regions" data-ar="نعمل في جميع المناطق اللبنانية">Operating across all Lebanese regions</div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">✉️</div>
+            <div>
+              <div class="contact-card-label" data-en="General Inquiries" data-ar="الاستفسارات العامة">General Inquiries</div>
+              <div class="contact-card-value">info@anakhayyak.com</div>
+              <div class="contact-card-sub" data-en="We respond within 24 hours" data-ar="نرد خلال 24 ساعة">We respond within 24 hours</div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">💼</div>
+            <div>
+              <div class="contact-card-label" data-en="Partnerships & Careers" data-ar="الشراكات والوظائف">Partnerships & Careers</div>
+              <div class="contact-card-value">careers@anakhayyak.com</div>
+              <div class="contact-card-sub" data-en="For partnerships and volunteer opportunities" data-ar="للشراكات وفرص التطوع">For partnerships and volunteer opportunities</div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">💛</div>
+            <div>
+              <div class="contact-card-label" data-en="Donations & Support" data-ar="التبرعات والدعم">Donations & Support</div>
+              <div class="contact-card-value">donate@anakhayyak.com</div>
+              <div class="contact-card-sub" data-en="Questions about donating or sponsoring" data-ar="استفسارات حول التبرع أو الرعاية">Questions about donating or sponsoring</div>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-link" title="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#94A3B8"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" class="social-link" title="Facebook">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#94A3B8"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="social-link" title="Twitter/X">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#94A3B8"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-link" title="LinkedIn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="#94A3B8"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper fade-up fade-delay-2">
+          <h3 style="font-size:20px; font-weight:800; margin-bottom:6px;" data-en="Send Us a Message" data-ar="أرسل لنا رسالة">Send Us a Message</h3>
+          <p style="font-size:14px; color:var(--gray-600); margin-bottom:28px;" data-en="We read every message and get back to you within one business day." data-ar="نقرأ كل رسالة ونرد عليك خلال يوم عمل واحد.">We read every message and get back to you within one business day.</p>
+          <div id="contactFormSuccess" class="form-success">
+            <div class="form-success-icon">✅</div>
+            <div class="form-success-title">Message Sent!</div>
+            <p class="form-success-text">Thank you for reaching out. A member of our team will be in touch within 24 hours.</p>
+          </div>
+          <form id="contactForm" onsubmit="submitContact(event)">
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label">Full Name <span>*</span></label>
+                <input type="text" class="form-input" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email Address <span>*</span></label>
+                <input type="email" class="form-input" placeholder="your@email.com" required />
+              </div>
+              <div class="form-group form-full">
+                <label class="form-label">Subject <span>*</span></label>
+                <select class="form-select" required>
+                  <option value="">What can we help with?</option>
+                  <option>I want to volunteer</option>
+                  <option>I want to donate</option>
+                  <option>Partnership inquiry</option>
+                  <option>Media / Press</option>
+                  <option>General question</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group form-full">
+                <label class="form-label">Message <span>*</span></label>
+                <textarea class="form-textarea" placeholder="Tell us how we can help..." required></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%; justify-content:center; margin-top:8px;" data-en="Send Message →" data-ar="إرسال الرسالة →">Send Message →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       PHOTO GALLERY
+  =========================== -->
+  <section id="gallery" class="section-sm" style="background: var(--gray-50);">
+    <div class="container">
+      <div class="section-header center fade-up">
+        <div class="section-label" data-en="📸 Gallery" data-ar="📸 معرض الصور">📸 Gallery</div>
+        <h2 class="section-title"><span data-en="Our Work in " data-ar="عملنا في ">Our Work in </span><span class="highlight" data-en="Action" data-ar="الميدان">Action</span></h2>
+        <p class="section-subtitle" data-en="A glimpse into the moments that define Ana Khayyak's mission on the ground." data-ar="لمحة عن اللحظات التي تُجسّد مهمة أنا خيّاك على أرض الواقع.">A glimpse into the moments that define Ana Khayyak's mission on the ground.</p>
+      </div>
+      <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:14px;" class="fade-up">
+        <div style="border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);aspect-ratio:4/3;">
+          <img src="https://cdn.hercules.app/file_y6lChxqQy8fvD96gXlEO0Z4S" alt="Ana Khayyak activity" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+        </div>
+        <div style="border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);aspect-ratio:4/3;">
+          <img src="https://cdn.hercules.app/file_8Zx9oK3fwj8ZaMfQwfanuhaF" alt="Ana Khayyak activity" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+        </div>
+        <div style="border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);aspect-ratio:4/3;">
+          <img src="https://cdn.hercules.app/file_IYZm1VjjSrtyRbuSRKO9gQv0" alt="Ana Khayyak activity" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+        </div>
+        <div style="border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);aspect-ratio:4/3;">
+          <img src="https://cdn.hercules.app/file_oHhCre0LSflAjzfS6s1Toz50" alt="Ana Khayyak activity" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+        </div>
+        <div style="border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);aspect-ratio:4/3;">
+          <img src="https://cdn.hercules.app/file_hc6Y0lH3mazauX5pgFEbIKa0" alt="Ana Khayyak activity" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+        </div>
+        <div style="border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-sm);aspect-ratio:4/3;">
+          <img src="https://cdn.hercules.app/file_Ze8G3Y8irK4ZYygjl8xG3wmt" alt="Ana Khayyak team" style="width:100%;height:100%;object-fit:cover;transition:transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       CTA BANNER
+  =========================== -->
+  <section id="cta">
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="fade-up">
+        <p style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:rgba(255,255,255,0.5); margin-bottom:14px;" data-en="Join Us Today" data-ar="انضم إلينا اليوم">Join Us Today</p>
+        <h2 class="cta-title"><span data-en="Ready to Make a " data-ar="هل أنت مستعد لإحداث ">Ready to Make a </span><span style="color:var(--gold);" data-en="Difference?" data-ar="فرق؟">Difference?</span></h2>
+        <p class="cta-subtitle" data-en="Together, we are building a stronger, more connected, more hopeful Lebanon — one community at a time." data-ar="معاً نبني لبناناً أقوى وأكثر تواصلاً وأملاً — مجتمعاً تلو الآخر.">Together, we are building a stronger, more connected, more hopeful Lebanon — one community at a time.</p>
+        <div class="cta-buttons">
+          <a href="#get-involved" class="btn btn-gold btn-lg" onclick="switchTab('volunteer')" data-en="🤝 Become a Volunteer" data-ar="🤝 كن متطوعاً">🤝 Become a Volunteer</a>
+          <a href="#get-involved" class="btn btn-outline btn-lg" onclick="switchTab('donate')" data-en="💛 Support Our Work" data-ar="💛 ادعم عملنا">💛 Support Our Work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       FOOTER
+  =========================== -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <div class="footer-logo-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C9.34 2 7.18 4.16 7.18 6.82C7.18 9.42 9.22 11.54 11.87 11.62C11.96 11.61 12.05 11.61 12.12 11.62C14.77 11.54 16.81 9.42 16.82 6.82C16.82 4.16 14.66 2 12 2Z" fill="white"/>
+                <path d="M17.16 14.15C14.33 12.29 9.69 12.29 6.84 14.15C5.55 15 4.85 16.15 4.85 17.38C4.85 18.61 5.55 19.75 6.83 20.59C8.25 21.53 10.12 22 12 22C13.88 22 15.75 21.53 17.17 20.59C18.45 19.74 19.15 18.6 19.15 17.36C19.14 16.13 18.45 14.99 17.16 14.15Z" fill="white"/>
+              </svg>
+            </div>
+            Ana Khayyak
+          </div>
+          <p class="footer-about" data-en="Building hope and creating positive change in Lebanese communities through youth empowerment and volunteerism. Together, we are building a stronger Lebanon." data-ar="بناء الأمل وإحداث تغيير إيجابي في المجتمعات اللبنانية من خلال تمكين الشباب والتطوع. معاً نبني لبناناً أقوى.">Building hope and creating positive change in Lebanese communities through youth empowerment and volunteerism. Together, we are building a stronger Lebanon.</p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social">📸</a>
+            <a href="#" class="footer-social">👥</a>
+            <a href="#" class="footer-social">🐦</a>
+            <a href="#" class="footer-social">💼</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title" data-en="Quick Links" data-ar="روابط سريعة">Quick Links</div>
+          <div class="footer-links">
+            <a href="#about" data-en="About Us" data-ar="من نحن">About Us</a>
+            <a href="#mission" data-en="Our Mission" data-ar="مهمتنا">Our Mission</a>
+            <a href="#activities" data-en="Activities" data-ar="الأنشطة">Activities</a>
+            <a href="#partners" data-en="Partners" data-ar="الشركاء">Partners</a>
+            <a href="#get-involved" data-en="Volunteer" data-ar="تطوع">Volunteer</a>
+            <a href="#get-involved" onclick="switchTab('donate')" data-en="Donate" data-ar="تبرع">Donate</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title" data-en="Our Work" data-ar="عملنا">Our Work</div>
+          <div class="footer-links">
+            <a href="#activities" data-en="Community Outreach" data-ar="التواصل المجتمعي">Community Outreach</a>
+            <a href="#activities" data-en="Youth Workshops" data-ar="ورش عمل الشباب">Youth Workshops</a>
+            <a href="#activities" data-en="Cultural Events" data-ar="الفعاليات الثقافية">Cultural Events</a>
+            <a href="#activities" data-en="Special Programs" data-ar="البرامج الخاصة">Special Programs</a>
+            <a href="#impact" data-en="Our Impact" data-ar="أثرنا">Our Impact</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title" data-en="Contact Info" data-ar="معلومات الاتصال">Contact Info</div>
+          <div class="footer-contact-item">
+            <span class="icon">📍</span>
+            <span>Beirut, Lebanon</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="icon">✉️</span>
+            <span>info@anakhayyak.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="icon">💼</span>
+            <span>careers@anakhayyak.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="icon">💛</span>
+            <span>donate@anakhayyak.com</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span data-en="© 2026 Ana Khayyak NGO. All rights reserved." data-ar="© 2026 منظمة أنا خيّاك. جميع الحقوق محفوظة.">© 2026 Ana Khayyak NGO. All rights reserved.</span>
+        <div class="footer-bottom-links">
+          <a href="#" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</a>
+          <a href="#" data-en="Terms of Use" data-ar="شروط الاستخدام">Terms of Use</a>
+          <a href="#" data-en="Transparency Report" data-ar="تقرير الشفافية">Transparency Report</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <span class="toast-icon" id="toastIcon">✅</span>
+    <span id="toastMsg">Done!</span>
+  </div>
+
+  <!-- ===========================
+       JAVASCRIPT
+  =========================== -->
+  <script>
+    // ----- NAVBAR SCROLL -----
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) navbar.classList.add('scrolled');
+      else navbar.classList.remove('scrolled');
+    });
+
+    // ----- HAMBURGER -----
+    function toggleMenu() {
+      document.getElementById('hamburger').classList.toggle('open');
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
+    function closeMenu() {
+      document.getElementById('hamburger').classList.remove('open');
+      document.getElementById('mobileMenu').classList.remove('open');
+    }
+
+    // ----- LANGUAGE TOGGLE -----
+    let currentLang = 'en';
+    function toggleLanguage() {
+      currentLang = currentLang === 'en' ? 'ar' : 'en';
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+      document.getElementById('langLabel').textContent = currentLang === 'en' ? 'عربي' : 'English';
+
+      document.querySelectorAll('[data-' + currentLang + ']').forEach(el => {
+        el.textContent = el.getAttribute('data-' + currentLang);
+      });
+    }
+
+    // ----- TABS -----
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      document.querySelectorAll('.involved-tab').forEach(t => t.classList.remove('active'));
+      document.getElementById('tab-' + tab).classList.add('active');
+      const tabs = document.querySelectorAll('.involved-tab');
+      tabs[tab === 'volunteer' ? 0 : 1].classList.add('active');
+      document.getElementById('get-involved').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // ----- DONATE AMOUNT -----
+    function selectAmount(el, amount) {
+      document.querySelectorAll('.donate-amount').forEach(b => b.classList.remove('active'));
+      el.classList.add('active');
+      const wrapper = document.getElementById('customAmountWrapper');
+      if (amount === null) {
+        wrapper.style.display = 'block';
+        document.getElementById('customAmount').focus();
+      } else {
+        wrapper.style.display = 'none';
+      }
+    }
+
+    function handleDonate() {
+      showToast('✅', "Thank you! We'll contact you with payment details shortly.");
+    }
+
+    // ----- FORM SUBMISSIONS -----
+    function submitVolunteer(e) {
+      e.preventDefault();
+      document.getElementById('volunteerForm').style.display = 'none';
+      document.getElementById('volunteerFormSuccess').style.display = 'block';
+      showToast('🎉', 'Volunteer application submitted!');
+    }
+
+    function submitContact(e) {
+      e.preventDefault();
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('contactFormSuccess').style.display = 'block';
+      showToast('✅', 'Message sent successfully!');
+    }
+
+    // ----- TOAST -----
+    function showToast(icon, msg) {
+      const toast = document.getElementById('toast');
+      document.getElementById('toastIcon').textContent = icon;
+      document.getElementById('toastMsg').textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 4000);
+    }
+
+    // ----- COUNTER ANIMATION -----
+    function animateCounter(el) {
+      if ('plain' in el.dataset) return;
+      const target = parseInt(el.dataset.target);
+      const duration = 1800;
+      const start = performance.now();
+      const update = (now) => {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(eased * target);
+        if (progress < 1) requestAnimationFrame(update);
+        else el.textContent = target;
+      };
+      requestAnimationFrame(update);
+    }
+
+    // ----- SCROLL ANIMATIONS -----
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          if (entry.target.classList.contains('counter')) animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    document.querySelectorAll('.counter').forEach(el => observer.observe(el));
+
+    // ----- SMOOTH ACTIVE NAV LINKS -----
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(sec => {
+        if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
+      });
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        a.style.color = '';
+        if (a.getAttribute('href') === '#' + current) {
+          a.style.color = navbar.classList.contains('scrolled') ? 'var(--blue-primary)' : 'white';
+          a.style.fontWeight = '700';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
