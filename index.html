@@ -1008,6 +1008,13 @@
     .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     .form-full { grid-column: 1 / -1; }
 
+    .involved-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 48px;
+      align-items: start;
+    }
+
     .form-group { display: flex; flex-direction: column; gap: 7px; }
     .form-label { font-size: 13px; font-weight: 600; color: var(--gray-800); }
     .form-label span { color: var(--blue-primary); margin-left: 2px; }
@@ -1550,11 +1557,12 @@
       .involved-tab { flex: 1; text-align: center; }
       .contact-form-wrapper { padding: 24px; }
       .values-grid { grid-template-columns: repeat(2, 1fr); }
+      .involved-grid { grid-template-columns: 1fr; gap: 32px; }
 
       /* Mobile overflow prevention */
       section, .section, footer, .voxire-strip,
       .container, .hero, #hero, #about, #mission,
-      #activities, #partners, #get-involved, #contact, #gallery, #cta {
+      #activities, #partners, #contact, #gallery, #cta {
         max-width: 100vw;
         overflow-x: hidden;
       }
@@ -2020,7 +2028,7 @@
 
       <!-- Volunteer Form -->
       <div id="tab-volunteer" class="tab-content active fade-up">
-        <div style="display:grid; grid-template-columns: 1fr 1.6fr; gap:48px; align-items:start;">
+        <div class="involved-grid">
           <div>
             <h3 style="font-size:22px; font-weight:800; margin-bottom:14px;" data-en="Why Volunteer With Us?" data-ar="لماذا تتطوع معنا؟">Why Volunteer With Us?</h3>
             <p style="font-size:15px; color: var(--gray-600); line-height:1.75; margin-bottom:24px;" data-en="Join a diverse community of passionate individuals committed to making a positive difference in Lebanon. As an Ana Khayyak volunteer, you'll gain real-world experience, forge meaningful friendships, and create lasting change." data-ar="انضم إلى مجتمع متنوع من الأفراد الشغوفين الملتزمين بإحداث فرق إيجابي في لبنان. كمتطوع في أنا خيّاك، ستكتسب خبرة عملية وتبني صداقات حقيقية وتُحدث تغييراً دائماً.">Join a diverse community of passionate individuals committed to making a positive difference in Lebanon. As an Ana Khayyak volunteer, you'll gain real-world experience, forge meaningful friendships, and create lasting change.</p>
@@ -2120,7 +2128,7 @@
 
       <!-- Donate Tab -->
       <div id="tab-donate" class="tab-content fade-up">
-        <div style="display:grid; grid-template-columns: 1fr 1.6fr; gap:48px; align-items:start;">
+        <div class="involved-grid">
           <div>
             <h3 style="font-size:22px; font-weight:800; margin-bottom:14px;" data-en="Your Donation Creates Change" data-ar="تبرعك يصنع التغيير">Your Donation Creates Change</h3>
             <p style="font-size:15px; color: var(--gray-600); line-height:1.75; margin-bottom:24px;" data-en="Every contribution, big or small, makes a real difference in the lives of those we serve. Your donation enables us to expand our reach and deepen our impact across Lebanon." data-ar="كل مساهمة، صغيرة كانت أم كبيرة، تُحدث فرقاً حقيقياً في حياة من نخدمهم. تبرعك يُمكّننا من توسيع مدى وصولنا وتعميق أثرنا في لبنان.">Every contribution, big or small, makes a real difference in the lives of those we serve. Your donation enables us to expand our reach and deepen our impact across Lebanon.</p>
